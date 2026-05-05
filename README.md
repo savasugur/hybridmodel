@@ -96,12 +96,6 @@ The script prints NSE and RMSE to the Command Window and generates a figure comp
 
 ---
 
-## License
-
-This code is released under the [MIT License](LICENSE).
-
----
-
 ## Reference
 
 If you use this code, please cite the associated paper:
