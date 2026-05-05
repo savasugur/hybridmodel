@@ -94,8 +94,14 @@ The script prints NSE and RMSE to the Command Window and generates a figure comp
 
 > The standalone ANFIS model reported in the paper was developed using the MATLAB Neuro-Fuzzy Designer graphical interface. Because that tool stores trained models in a proprietary binary format, the resulting files are not suitable for public distribution. The hybrid model script provided here reproduces the residual-correction workflow in fully editable source code and can serve as the basis for replication.
 
+
 ---
 
+## License
+
+This code is released under the [MIT License](LICENSE).
+
+---
 ## Reference
 
 If you use this code, please cite the associated paper:
