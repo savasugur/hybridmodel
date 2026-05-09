@@ -1,0 +1,14 @@
+# MATLAB
+*.asv
+*.m~
+*.mex*
+*.fig
+slprj/
+sccprj/
+
+# Results output folder (generated at runtime)
+results/
+
+# OS
+.DS_Store
+Thumbs.db
