@@ -3,8 +3,7 @@
 Code and data for:
 
 > Temelli, S. U. & Tombul, M. *A Hybrid Residual-Learning Approach Integrating HEC-HMS and ANFIS for
-> Event-Based Rainfall–Runoff Modelling in a Data-Scarce Small Catchment.* Acta Geophysica
-> (manuscript AGPH-D-26-00469, revision 1, under review).
+> Event-Based Rainfall–Runoff Modelling in a Data-Scarce Small Catchment.* Acta Geophysica.
 
 An Adaptive Neuro-Fuzzy Inference System (ANFIS) learns the residuals of a calibrated HEC-HMS model
 for five 5-min storm events in the 4.7 km² Kurukavak Creek Basin (Bilecik, Türkiye). The workflow
