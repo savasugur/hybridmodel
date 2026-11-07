@@ -1,0 +1,239 @@
+
+===== reproduce.py: Original protocol: standalone ANFIS equals ARX =====
+anfis rules= 1
+30 Jun 1988 {'NSE': np.float64(0.9942), 'RMSE': np.float64(0.023), 'MAE': np.float64(0.0125), 'KGE': np.float64(0.9619), 'PBIAS': np.float64(2.0923)}
+02 May 1990 {'NSE': np.float64(0.9772), 'RMSE': np.float64(0.0305), 'MAE': np.float64(0.0117), 'KGE': np.float64(0.9874), 'PBIAS': np.float64(0.0824)}
+03 Jun 1995 {'NSE': np.float64(0.9816), 'RMSE': np.float64(0.0353), 'MAE': np.float64(0.0184), 'KGE': np.float64(0.9636), 'PBIAS': np.float64(-2.8459)}
+23 Mar 1998 {'NSE': np.float64(0.9818), 'RMSE': np.float64(0.0408), 'MAE': np.float64(0.0228), 'KGE': np.float64(0.9851), 'PBIAS': np.float64(-1.1454)}
+01 Jun 2005 {'NSE': np.float64(0.993), 'RMSE': np.float64(0.0205), 'MAE': np.float64(0.0097), 'KGE': np.float64(0.9468), 'PBIAS': np.float64(2.5716)}
+hyb rules= 2
+30 Jun 1988 {'NSE': np.float64(0.9892), 'RMSE': np.float64(0.0314), 'MAE': np.float64(0.0225), 'KGE': np.float64(0.9481), 'PBIAS': np.float64(-4.2391)}
+02 May 1990 {'NSE': np.float64(0.9794), 'RMSE': np.float64(0.029), 'MAE': np.float64(0.013), 'KGE': np.float64(0.9406), 'PBIAS': np.float64(5.6803)}
+03 Jun 1995 {'NSE': np.float64(0.9846), 'RMSE': np.float64(0.0323), 'MAE': np.float64(0.0178), 'KGE': np.float64(0.9878), 'PBIAS': np.float64(0.112)}
+23 Mar 1998 {'NSE': np.float64(0.9844), 'RMSE': np.float64(0.0379), 'MAE': np.float64(0.0223), 'KGE': np.float64(0.9903), 'PBIAS': np.float64(0.5057)}
+01 Jun 2005 {'NSE': np.float64(0.9929), 'RMSE': np.float64(0.0207), 'MAE': np.float64(0.0174), 'KGE': np.float64(0.9298), 'PBIAS': np.float64(6.4768)}
+HMS
+30 Jun 1988 {'NSE': np.float64(0.5196), 'RMSE': np.float64(0.2096), 'MAE': np.float64(0.1904), 'KGE': np.float64(0.2485), 'PBIAS': np.float64(-71.15)}
+02 May 1990 {'NSE': np.float64(0.7024), 'RMSE': np.float64(0.1101), 'MAE': np.float64(0.0502), 'KGE': np.float64(0.5545), 'PBIAS': np.float64(20.4545)}
+03 Jun 1995 {'NSE': np.float64(0.7256), 'RMSE': np.float64(0.1362), 'MAE': np.float64(0.0799), 'KGE': np.float64(0.6455), 'PBIAS': np.float64(6.2177)}
+23 Mar 1998 {'NSE': np.float64(0.785), 'RMSE': np.float64(0.1405), 'MAE': np.float64(0.0827), 'KGE': np.float64(0.658), 'PBIAS': np.float64(16.7151)}
+01 Jun 2005 {'NSE': np.float64(0.6687), 'RMSE': np.float64(0.1414), 'MAE': np.float64(0.1246), 'KGE': np.float64(0.6047), 'PBIAS': np.float64(37.6831)}
+
+===== reproduce2.py: Original protocol: hybrid ANFIS =====
+rules 2
+final tr 0.0277 va 0.0295
+30 Jun 1988 {'NSE': np.float64(0.9931), 'RMSE': np.float64(0.0251), 'MAE': np.float64(0.0136), 'KGE': np.float64(0.9822), 'PBIAS': np.float64(-1.7005)}
+02 May 1990 {'NSE': np.float64(0.9822), 'RMSE': np.float64(0.0269), 'MAE': np.float64(0.0112), 'KGE': np.float64(0.9364), 'PBIAS': np.float64(4.5591)}
+03 Jun 1995 {'NSE': np.float64(0.9875), 'RMSE': np.float64(0.029), 'MAE': np.float64(0.0157), 'KGE': np.float64(0.9751), 'PBIAS': np.float64(-2.2562)}
+23 Mar 1998 {'NSE': np.float64(0.9884), 'RMSE': np.float64(0.0326), 'MAE': np.float64(0.0191), 'KGE': np.float64(0.9906), 'PBIAS': np.float64(-0.5642)}
+01 Jun 2005 {'NSE': np.float64(0.9938), 'RMSE': np.float64(0.0193), 'MAE': np.float64(0.0125), 'KGE': np.float64(0.9305), 'PBIAS': np.float64(5.1536)}
+
+===== experiments.py: All models x 3 scaling schemes x 5 held-out events -> results/experiments.json =====
+
+### norm=own test=30 Jun 1988 rules={'arx': 1, 'anfis': 2, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE     PBIAS  PeakErr  PeakTime    VolErr
+HEC-HMS                 0.5196  0.0001  0.0001  0.2491  -71.0853 -11.4250     -20.0   70.7007
+Persistence             0.9756  0.0000  0.0000  0.9865   -0.4947   0.0000       5.0    0.7959
+ARX (one-step)          0.9954  0.0000  0.0000  0.9773    1.0278   1.7076       5.0   -0.8956
+ANFIS (one-step)        0.9942  0.0000  0.0000  0.9744    0.4514  -2.4828       5.0   -0.5505
+Hybrid (one-step)       0.9828  0.0000  0.0000  0.9023   -7.8103   3.3935       5.0    7.8366
+ANFIS (recursive)      -0.8628  0.0001  0.0001 -0.5188 -118.8085 -15.9411     -20.0  117.7074
+Hybrid (recursive)     -0.1408  0.0001  0.0001 -0.1381 -111.5431  28.7004     -20.0  110.9250
+Hybrid (no Q feedback)  0.1884  0.0001  0.0001  0.3763  -55.3769  39.1955     -20.0   58.3388
+
+### norm=own test=02 May 1990 rules={'arx': 1, 'anfis': 2, 'hyb': 4, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE     PBIAS  PeakErr  PeakTime    VolErr
+HEC-HMS                 0.7024  0.0005  0.0002  0.5545   20.4545 -60.8696       0.0  -20.4545
+Persistence             0.9420  0.0002  0.0001  0.9710    0.0000   0.0000       5.0    0.0000
+ARX (one-step)          0.9716  0.0002  0.0001  0.9768   -1.1501   7.7412       5.0    1.1246
+ANFIS (one-step)        0.9737  0.0002  0.0001  0.9729   -1.6809   5.2684       5.0    1.6477
+Hybrid (one-step)       0.9814  0.0001  0.0001  0.9587    3.9790  -4.5748       5.0   -3.9572
+ANFIS (recursive)      -1.4991  0.0015  0.0011 -0.6067 -131.1556 -45.2273      75.0  128.8104
+Hybrid (recursive)     -0.0035  0.0009  0.0006  0.1906   21.2771 -57.9768      20.0  -22.7437
+Hybrid (no Q feedback)  0.5494  0.0006  0.0003  0.3918   27.1087 -57.0754     -10.0  -27.3279
+
+### norm=own test=03 Jun 1995 rules={'arx': 1, 'anfis': 2, 'hyb': 3, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE     PBIAS  PeakErr  PeakTime    VolErr
+HEC-HMS                 0.7256  0.0078  0.0046  0.6455    6.2177 -48.0702      20.0   -6.2392
+Persistence             0.9468  0.0034  0.0018  0.9734   -0.0000   0.0000       5.0    0.0000
+ARX (one-step)          0.9799  0.0021  0.0010  0.9580   -2.6982  12.8336       5.0    2.6773
+ANFIS (one-step)        0.9921  0.0013  0.0006  0.9851   -0.6288   0.0830       0.0    0.6311
+Hybrid (one-step)       0.9859  0.0018  0.0009  0.9847   -0.9679   3.7601       5.0    0.9712
+ANFIS (recursive)      -0.0961  0.0155  0.0107 -0.1053 -104.8135  -3.4752       0.0  103.0660
+Hybrid (recursive)      0.8295  0.0061  0.0045  0.6438  -34.4799 -25.5819       5.0   34.4023
+Hybrid (no Q feedback)  0.7471  0.0075  0.0044  0.7179    2.5703 -43.7334      20.0   -2.6046
+
+### norm=own test=23 Mar 1998 rules={'arx': 1, 'anfis': 2, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7850  0.0070  0.0041  0.6580  16.7151 -40.8000      20.0 -16.8331
+Persistence             0.9485  0.0034  0.0020  0.9695   1.4024   0.0000       5.0  -1.6530
+ARX (one-step)          0.9806  0.0021  0.0010  0.9771  -1.1981  14.1266       5.0   1.1541
+ANFIS (one-step)        0.9836  0.0019  0.0009  0.9770  -1.5654  11.2684       5.0   1.4992
+Hybrid (one-step)       0.9865  0.0018  0.0009  0.9906  -0.6455   7.6734       5.0   0.5966
+ANFIS (recursive)       0.8664  0.0055  0.0040  0.7800 -20.9556 -15.4299      10.0  19.8555
+Hybrid (recursive)      0.8567  0.0057  0.0038  0.8354 -12.7092 -22.8229       5.0  12.4890
+Hybrid (no Q feedback)  0.7869  0.0070  0.0049  0.7185   6.5248 -36.1905      20.0  -6.1186
+
+### norm=own test=01 Jun 2005 rules={'arx': 1, 'anfis': 1, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.6687  0.0014  0.0012  0.6545  32.4267 -22.2222      60.0 -34.0543
+Persistence             0.9884  0.0003  0.0001  0.9941   0.0749   0.0000       5.0   0.6853
+ARX (one-step)          0.9926  0.0002  0.0001  0.9451   2.4639   0.0907       5.0  -2.1504
+ANFIS (one-step)        0.9930  0.0002  0.0001  0.9484   2.2129   0.4779       5.0  -1.9067
+Hybrid (one-step)       0.9938  0.0002  0.0001  0.9356   4.4347  -4.3981       5.0  -4.2740
+ANFIS (recursive)      -0.1808  0.0026  0.0014 -0.1365  38.1581 -58.6290    -110.0 -38.3820
+Hybrid (recursive)      0.7558  0.0012  0.0009  0.7162  23.8841 -24.1218       0.0 -22.9021
+Hybrid (no Q feedback)  0.5064  0.0017  0.0011  0.6290  26.5033   7.1815    -135.0 -30.4470
+
+### norm=train test=30 Jun 1988 rules={'arx': 1, 'anfis': 1, 'hyb': 1, 'hybnoq': 1}
+                             NSE    RMSE     MAE      KGE      PBIAS   PeakErr  PeakTime     VolErr
+HEC-HMS                   0.5196  0.0001  0.0001   0.2491   -71.0853  -11.4250     -20.0    70.7007
+Persistence               0.9756  0.0000  0.0000   0.9865    -0.4947    0.0000       5.0     0.7959
+ARX (one-step)           -0.0868  0.0001  0.0001  -0.2073  -120.6607   28.7356     -30.0   120.3974
+ANFIS (one-step)         -0.3261  0.0001  0.0001  -0.3416  -134.0983   32.4229     -30.0   133.7020
+Hybrid (one-step)         0.8974  0.0000  0.0000   0.9220     5.0188    4.0875     -30.0    -3.5738
+ANFIS (recursive)      -140.6825  0.0012  0.0012 -13.0605 -1395.5341  375.4254     -10.0  1391.7977
+Hybrid (recursive)        0.4838  0.0001  0.0000   0.6963    16.0957   43.3614     -20.0   -15.5663
+Hybrid (no Q feedback)   -6.4849  0.0003  0.0002  -1.6180  -224.4551  337.6804     -30.0   230.6859
+
+### norm=train test=02 May 1990 rules={'arx': 1, 'anfis': 1, 'hyb': 1, 'hybnoq': 1}
+                           NSE    RMSE     MAE     KGE     PBIAS   PeakErr  PeakTime    VolErr
+HEC-HMS                 0.7024  0.0005  0.0002  0.5545   20.4545  -60.8696       0.0  -20.4545
+Persistence             0.9420  0.0002  0.0001  0.9710    0.0000    0.0000       5.0    0.0000
+ARX (one-step)          0.9545  0.0002  0.0002  0.7780  -22.1456    1.7132       5.0   21.9137
+ANFIS (one-step)        0.9489  0.0002  0.0002  0.7412  -25.8242    2.0649       5.0   25.5568
+Hybrid (one-step)       0.9602  0.0002  0.0001  0.9533    4.0411   -5.5767       5.0   -4.0159
+ANFIS (recursive)      -1.2257  0.0014  0.0013 -1.6818 -267.4091   -9.7098       0.0  265.8404
+Hybrid (recursive)      0.9041  0.0003  0.0001  0.7657   10.5783  -30.1051       0.0  -10.5783
+Hybrid (no Q feedback) -0.7449  0.0012  0.0005  0.2483  -26.4175  159.8910     -15.0   26.0620
+
+### norm=train test=03 Jun 1995 rules={'arx': 1, 'anfis': 1, 'hyb': 1, 'hybnoq': 1}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7256  0.0078  0.0046  0.6455   6.2177 -48.0702      20.0  -6.2392
+Persistence             0.9468  0.0034  0.0018  0.9734  -0.0000   0.0000       5.0   0.0000
+ARX (one-step)          0.9823  0.0020  0.0010  0.9880  -0.4336   8.5694       5.0   0.4260
+ANFIS (one-step)        0.9823  0.0020  0.0010  0.9880  -0.4365   8.5681       5.0   0.4288
+Hybrid (one-step)       0.9849  0.0018  0.0011  0.9671  -2.6815   3.1123       5.0   2.6754
+ANFIS (recursive)       0.8483  0.0058  0.0040  0.8531  -5.9636 -28.4107      15.0   5.9017
+Hybrid (recursive)      0.8337  0.0060  0.0040  0.7836 -13.4042 -33.5133      20.0  13.3745
+Hybrid (no Q feedback)  0.8295  0.0061  0.0040  0.8116 -10.3217 -32.9705      20.0  10.2849
+
+### norm=train test=23 Mar 1998 rules={'arx': 1, 'anfis': 1, 'hyb': 1, 'hybnoq': 1}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7850  0.0070  0.0041  0.6580  16.7151 -40.8000      20.0 -16.8331
+Persistence             0.9485  0.0034  0.0020  0.9695   1.4024   0.0000       5.0  -1.6530
+ARX (one-step)          0.9823  0.0020  0.0013  0.9813   0.5825  10.0843       5.0  -0.6099
+ANFIS (one-step)        0.9823  0.0020  0.0013  0.9813   0.5800  10.0832       5.0  -0.6077
+Hybrid (one-step)       0.9856  0.0018  0.0011  0.9876  -0.2259   7.8958       5.0   0.2370
+ANFIS (recursive)       0.6774  0.0086  0.0065  0.8258   5.7979 -13.2617       5.0  -5.2979
+Hybrid (recursive)      0.8818  0.0052  0.0039  0.9011  -0.2051 -18.9669       5.0   0.3122
+Hybrid (no Q feedback)  0.8719  0.0054  0.0041  0.9151   2.2719 -15.5354      15.0  -2.0783
+
+### norm=train test=01 Jun 2005 rules={'arx': 1, 'anfis': 1, 'hyb': 1, 'hybnoq': 1}
+                           NSE    RMSE     MAE     KGE    PBIAS   PeakErr  PeakTime   VolErr
+HEC-HMS                 0.6687  0.0014  0.0012  0.6545  32.4267  -22.2222      60.0 -34.0543
+Persistence             0.9884  0.0003  0.0001  0.9941   0.0749    0.0000       5.0   0.6853
+ARX (one-step)          0.9648  0.0004  0.0002  0.9025   3.5334   -5.1334       5.0  -3.4436
+ANFIS (one-step)        0.9567  0.0005  0.0003  0.8817   5.6840   -6.7485       5.0  -5.6468
+Hybrid (one-step)       0.9348  0.0006  0.0004  0.8804   9.9864   -9.8459       5.0 -10.2311
+ANFIS (recursive)      -0.5411  0.0029  0.0017 -0.1309  44.4511  -18.8140    -115.0 -45.4718
+Hybrid (recursive)      0.1688  0.0021  0.0016  0.4680  38.5659    7.8787    -115.0 -41.9844
+Hybrid (no Q feedback) -0.2819  0.0027  0.0017  0.3796  36.2622  128.6920    -130.0 -38.9507
+
+### norm=hms test=30 Jun 1988 rules={'arx': 1, 'anfis': 2, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE     PBIAS  PeakErr  PeakTime    VolErr
+HEC-HMS                 0.5196  0.0001  0.0001  0.2491  -71.0853 -11.4250     -20.0   70.7007
+Persistence             0.9756  0.0000  0.0000  0.9865   -0.4947   0.0000       5.0    0.7959
+ARX (one-step)          0.9919  0.0000  0.0000  0.9763   -0.3894   0.2319       5.0    0.6385
+ANFIS (one-step)        0.9935  0.0000  0.0000  0.9667   -2.8838   2.5127       5.0    2.9028
+Hybrid (one-step)       0.9869  0.0000  0.0000  0.9080   -4.6429   4.1552       5.0    4.7106
+ANFIS (recursive)      -0.3113  0.0001  0.0001 -0.1393 -111.8282  21.2172     -15.0  112.3953
+Hybrid (recursive)      0.6823  0.0001  0.0000  0.4853  -38.1163  33.8173     -15.0   38.4247
+Hybrid (no Q feedback)  0.0408  0.0001  0.0001  0.1798  -69.0676  70.3915     -15.0   71.0751
+
+### norm=hms test=02 May 1990 rules={'arx': 1, 'anfis': 2, 'hyb': 3, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7024  0.0005  0.0002  0.5545  20.4545 -60.8696       0.0 -20.4545
+Persistence             0.9420  0.0002  0.0001  0.9710   0.0000   0.0000       5.0   0.0000
+ARX (one-step)          0.9723  0.0002  0.0001  0.9840   0.8077   5.9963       5.0  -0.8276
+ANFIS (one-step)        0.9755  0.0001  0.0001  0.9268   3.4357  -5.7313       5.0  -3.4672
+Hybrid (one-step)       0.9701  0.0002  0.0001  0.8855   6.9536 -14.4690       5.0  -6.9556
+ANFIS (recursive)      -0.2694  0.0010  0.0005 -1.0173  71.8805 -93.9898    -280.0 -72.0370
+Hybrid (recursive)      0.3003  0.0008  0.0004  0.1773  50.3384 -63.1623      15.0 -50.4011
+Hybrid (no Q feedback)  0.6543  0.0005  0.0003  0.5907   9.5323 -53.8793     -20.0  -9.7654
+
+### norm=hms test=03 Jun 1995 rules={'arx': 1, 'anfis': 1, 'hyb': 3, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7256  0.0078  0.0046  0.6455   6.2177 -48.0702      20.0  -6.2392
+Persistence             0.9468  0.0034  0.0018  0.9734  -0.0000   0.0000       5.0   0.0000
+ARX (one-step)          0.9811  0.0020  0.0010  0.9680  -2.3943  11.2110       5.0   2.3667
+ANFIS (one-step)        0.9811  0.0020  0.0011  0.9677  -2.5065  11.1742       5.0   2.4756
+Hybrid (one-step)       0.9884  0.0016  0.0008  0.9935   0.1873   2.0613       5.0  -0.1989
+ANFIS (recursive)       0.7219  0.0078  0.0064  0.5010 -49.1454 -16.9776      15.0  48.8068
+Hybrid (recursive)      0.8996  0.0047  0.0032  0.7928 -15.9822 -21.7164       5.0  15.9061
+Hybrid (no Q feedback)  0.8173  0.0063  0.0046  0.7685 -10.6526 -32.7019      20.0  10.4393
+
+### norm=hms test=23 Mar 1998 rules={'arx': 1, 'anfis': 1, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.7850  0.0070  0.0041  0.6580  16.7151 -40.8000      20.0 -16.8331
+Persistence             0.9485  0.0034  0.0020  0.9695   1.4024   0.0000       5.0  -1.6530
+ARX (one-step)          0.9816  0.0021  0.0011  0.9806  -1.5818  13.0351       5.0   1.5352
+ANFIS (one-step)        0.9816  0.0021  0.0011  0.9805  -1.6135  13.0095       5.0   1.5649
+Hybrid (one-step)       0.9861  0.0018  0.0009  0.9857  -0.4173   9.6079       5.0   0.4086
+ANFIS (recursive)       0.6897  0.0084  0.0069  0.6883 -28.4903  -2.8552      15.0  28.8507
+Hybrid (recursive)      0.8569  0.0057  0.0044  0.8990  -7.4217 -11.1688      15.0   7.6246
+Hybrid (no Q feedback)  0.8568  0.0057  0.0047  0.8515  -4.0380 -22.2426      20.0   4.2956
+
+### norm=hms test=01 Jun 2005 rules={'arx': 1, 'anfis': 1, 'hyb': 2, 'hybnoq': 2}
+                           NSE    RMSE     MAE     KGE    PBIAS  PeakErr  PeakTime   VolErr
+HEC-HMS                 0.6687  0.0014  0.0012  0.6545  32.4267 -22.2222      60.0 -34.0543
+Persistence             0.9884  0.0003  0.0001  0.9941   0.0749   0.0000       5.0   0.6853
+ARX (one-step)          0.9889  0.0002  0.0001  0.9393   2.2809  -0.9116       5.0  -2.0674
+ANFIS (one-step)        0.9887  0.0003  0.0001  0.9406   1.9894  -0.8594       5.0  -1.8051
+Hybrid (one-step)       0.9845  0.0003  0.0002  0.9545   3.7159  -1.5940       5.0  -4.0541
+ANFIS (recursive)      -0.2813  0.0027  0.0015 -0.0294  27.7453 -36.8511    -110.0 -28.1256
+Hybrid (recursive)      0.3044  0.0020  0.0014  0.5746  31.5119  -3.3656    -115.0 -31.0856
+Hybrid (no Q feedback)  0.4594  0.0017  0.0013  0.6118  32.2059  -7.3816    -135.0 -36.0641
+
+===== extra.py: Optimiser sensitivity, LOEO summary, LOEO without the 1998 event =====
+hybrid 2005 own-norm NSE over 20 optimizer settings: min 0.9915 max 0.9946 median 0.9933
+hms {'HEC-HMS': (np.float64(0.702), 0.52, 0), 'Persistence': (np.float64(0.949), 0.942, 5), 'ARX (one-step)': (np.float64(0.982), 0.972, 5), 'ANFIS (one-step)': (np.float64(0.982), 0.975, 5), 'Hybrid (one-step)': (np.float64(0.986), 0.97, 5), 'ANFIS (recursive)': (np.float64(-0.269), -0.311, 0), 'Hybrid (recursive)': (np.float64(0.682), 0.3, 3), 'Hybrid (no Q feedback)': (np.float64(0.654), 0.041, 2)}
+train {'HEC-HMS': (np.float64(0.702), 0.52, 0), 'Persistence': (np.float64(0.949), 0.942, 5), 'ARX (one-step)': (np.float64(0.965), -0.087, 4), 'ANFIS (one-step)': (np.float64(0.957), -0.326, 4), 'Hybrid (one-step)': (np.float64(0.96), 0.897, 5), 'ANFIS (recursive)': (np.float64(-0.541), -140.682, 1), 'Hybrid (recursive)': (np.float64(0.834), 0.169, 3), 'Hybrid (no Q feedback)': (np.float64(-0.282), -6.485, 2)}
+own {'HEC-HMS': (np.float64(0.702), 0.52, 0), 'Persistence': (np.float64(0.949), 0.942, 5), 'ARX (one-step)': (np.float64(0.981), 0.972, 5), 'ANFIS (one-step)': (np.float64(0.992), 0.974, 5), 'Hybrid (one-step)': (np.float64(0.986), 0.981, 5), 'ANFIS (recursive)': (np.float64(-0.181), -1.499, 1), 'Hybrid (recursive)': (np.float64(0.756), -0.141, 3), 'Hybrid (no Q feedback)': (np.float64(0.549), 0.188, 2)}
+no1998 test 30 Jun 1988 {'HMS': np.float64(0.52), 'Pers': np.float64(0.976), 'ANFIS1': np.float64(0.992), 'Hyb1': np.float64(0.984), 'ANFISrec': np.float64(0.805), 'Hybrec': np.float64(0.246)}
+no1998 test 02 May 1990 {'HMS': np.float64(0.702), 'Pers': np.float64(0.942), 'ANFIS1': np.float64(0.974), 'Hyb1': np.float64(0.974), 'ANFISrec': np.float64(0.129), 'Hybrec': np.float64(0.291)}
+no1998 test 03 Jun 1995 {'HMS': np.float64(0.726), 'Pers': np.float64(0.947), 'ANFIS1': np.float64(0.981), 'Hyb1': np.float64(0.952), 'ANFISrec': np.float64(0.519), 'Hybrec': np.float64(-0.092)}
+no1998 test 01 Jun 2005 {'HMS': np.float64(0.669), 'Pers': np.float64(0.988), 'ANFIS1': np.float64(0.99), 'Hyb1': np.float64(0.981), 'ANFISrec': np.float64(-0.367), 'Hybrec': np.float64(0.284)}
+
+===== tables.py: LaTeX tables -> results/tab_*.tex =====
+HEC-HMS & 0.669 & 0.654 & 1.35 & 1.19 & 32.4 & $-$22.2 & 60 & $-$34.1 \\
+Persistence & 0.988 & 0.994 & 0.25 & 0.11 & 0.1 & 0.0 & 5 & 0.7 \\
+\midrule
+ARX (one-step) & 0.989 & 0.939 & 0.25 & 0.12 & 2.3 & $-$0.9 & 5 & $-$2.1 \\
+ANFIS (one-step) & 0.989 & 0.941 & 0.25 & 0.12 & 2.0 & $-$0.9 & 5 & $-$1.8 \\
+Hybrid (one-step) & 0.984 & 0.954 & 0.29 & 0.17 & 3.7 & $-$1.6 & 5 & $-$4.1 \\
+\midrule
+ANFIS (recursive) & $-$0.281 & $-$0.029 & 2.66 & 1.50 & 27.7 & $-$36.9 & $-$110 & $-$28.1 \\
+Hybrid (recursive) & 0.304 & 0.575 & 1.96 & 1.37 & 31.5 & $-$3.4 & $-$115 & $-$31.1 \\
+Hybrid (no Q feedback) & 0.459 & 0.612 & 1.73 & 1.27 & 32.2 & $-$7.4 & $-$135 & $-$36.1 \\
+HEC-HMS & 0.520 & 0.702 & 0.726 & 0.785 & 0.669 \\
+Persistence & 0.976 & 0.942 & 0.947 & 0.949 & 0.988 \\
+\midrule
+ARX (one-step) & 0.992 & 0.972 & 0.981 & 0.982 & 0.989 \\
+ANFIS (one-step) & 0.993 & 0.975 & 0.981 & 0.982 & 0.989 \\
+Hybrid (one-step) & 0.987 & 0.970 & 0.988 & 0.986 & 0.984 \\
+\midrule
+ANFIS (recursive) & $-$0.311 & $-$0.269 & 0.722 & 0.690 & $-$0.281 \\
+Hybrid (recursive) & 0.682 & 0.300 & 0.900 & 0.857 & 0.304 \\
+Hybrid (no Q feedback) & 0.041 & 0.654 & 0.817 & 0.857 & 0.459 \\
+HEC-HMS & 0.669 & 0.669 & 0.669 \\
+Persistence & 0.988 & 0.988 & 0.988 \\
+ARX (one-step) & 0.993 & 0.965 & 0.989 \\
+ANFIS (one-step) & 0.993 & 0.957 & 0.989 \\
+Hybrid (one-step) & 0.994 & 0.935 & 0.984 \\
+ANFIS (recursive) & $-$0.181 & $-$0.541 & $-$0.281 \\
+Hybrid (recursive) & 0.756 & 0.169 & 0.304 \\
+Hybrid (no Q feedback) & 0.506 & $-$0.282 & 0.459 \\
+
+===== figures.py: Figures 3-6 -> figures/ =====
+ok {'arx': 1, 'anfis': 1, 'hyb': 2, 'hybnoq': 2}
