@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "Hybrid HEC-HMS–ANFIS residual learning for the Kurukavak Creek Basin"
+type: software
+license: MIT
+repository-code: "https://github.com/savasugur/hybridmodel"
+authors:
+  - family-names: Temelli
+    given-names: Savas Ugur
+    orcid: "https://orcid.org/0000-0002-0611-774X"
+    affiliation: "Istanbul Nişantaşı University"
+  - family-names: Tombul
+    given-names: Mustafa
+    affiliation: "Ankara University"
+preferred-citation:
+  type: article
+  title: "A Hybrid Residual-Learning Approach Integrating HEC-HMS and ANFIS for Event-Based Rainfall–Runoff Modelling in a Data-Scarce Small Catchment"
+  journal: "Acta Geophysica"
+  status: submitted
+  authors:
+    - family-names: Temelli
+      given-names: Savas Ugur
+      orcid: "https://orcid.org/0000-0002-0611-774X"
+    - family-names: Tombul
+      given-names: Mustafa
